@@ -16,9 +16,9 @@ An animated web application that shows how a **stack (LIFO)** works, using the u
 ```
 stack-undo-redo-editor/
   index.html
-  css/style.css
-  js/stack.js   (Stack data structure)
-  js/app.js     (editor and interface logic)
+  style.css
+  stack.js   (Stack data structure)
+  app.js     (editor and interface logic)
 ```
 
 ## Run locally
@@ -26,6 +26,6 @@ Open `index.html` in a browser.
 
 ## Deploy on GitHub Pages
 1. Create a public repository named `stack-undo-redo-editor`.
-2. Upload the contents of this folder (keep the `css` and `js` folders), then commit.
+2. Upload the contents of this folder (all files sit together in one folder), then commit.
 3. Go to **Settings > Pages**, choose branch `main` and folder `/ (root)`, then **Save**.
 4. After about a minute the site is live at the URL above.
