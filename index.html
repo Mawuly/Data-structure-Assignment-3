@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undo/Redo Editor | Stack Data Structure Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Undo / Redo Editor</h1>
+    <p>Every edit is pushed onto an undo stack. Undo pops the most recent edit (last in, first out) and moves it to a redo stack.</p>
+  </header>
+
+  <div class="layout">
+    <section class="box side" aria-labelledby="eh">
+      <h2 id="eh">Edit the document</h2>
+      <label for="txt">Text to add</label>
+      <input id="txt" placeholder="Type a word or phrase" autocomplete="off">
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn primary full" id="add">Add text (push)</button>
+      <div class="btns">
+        <button class="btn" id="delword">Delete last word</button>
+        <button class="btn" id="upper">UPPERCASE</button>
+        <button class="btn" id="clearall">Clear text</button>
+        <button class="btn" id="sample">Load samples</button>
+      </div>
+
+      <h2 class="sub">Stack controls</h2>
+      <div class="btns">
+        <button class="btn" id="undoBtn">Undo (pop)</button>
+        <button class="btn" id="redoBtn">Redo (pop)</button>
+        <button class="btn" id="peek">Peek top</button>
+        <button class="btn" id="reset">Reset all</button>
+      </div>
+      <p class="hint">Shortcuts: Ctrl+Z undo, Ctrl+Y redo.</p>
+    </section>
+
+    <div class="main">
+      <section class="stats" aria-label="Statistics">
+        <div class="stat"><b id="sUndo">0</b><span>Undo stack size</span></div>
+        <div class="stat"><b id="sRedo">0</b><span>Redo stack size</span></div>
+        <div class="stat"><b id="sTotal">0</b><span>Edits made</span></div>
+        <div class="stat"><b id="sChars">0</b><span>Characters</span></div>
+      </section>
+
+      <section class="box" aria-labelledby="dh">
+        <h2 id="dh">Document</h2>
+        <div class="page" id="page"><span id="doc"></span><i class="caret"></i></div>
+      </section>
+
+      <div class="two">
+        <section class="box" aria-labelledby="uh">
+          <h2 id="uh">Undo stack</h2>
+          <div class="ends"><span>TOP (next to undo)</span></div>
+          <div class="stack" id="undoList" aria-live="polite"></div>
+          <div class="ends base"><span>BOTTOM</span></div>
+        </section>
+        <section class="box" aria-labelledby="rh">
+          <h2 id="rh">Redo stack</h2>
+          <div class="ends"><span>TOP (next to redo)</span></div>
+          <div class="stack" id="redoList" aria-live="polite"></div>
+          <div class="ends base"><span>BOTTOM</span></div>
+        </section>
+      </div>
+
+      <section class="box" aria-labelledby="lh">
+        <h2 id="lh">Operation log</h2>
+        <ul class="log" id="log"><li class="none">Operations appear here.</li></ul>
+      </section>
+    </div>
+  </div>
+</main>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="stack.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
